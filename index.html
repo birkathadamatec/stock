@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ניהול מלאי</title>
+  <link rel="stylesheet" href="./app.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ניהול מלאי</div>
+    <div class="spacer"></div>
+    <div id="userBadge" class="badge"></div>
+    <button id="logoutBtn" class="btn btn-ghost">יציאה</button>
+  </header>
+
+  <main id="app"></main>
+
+  <script>
+    // CONFIG
+    window.CONFIG = {
+      API_URL: "https://script.google.com/macros/s/AKfycbyReBXDUO72kIh8QF3urajPaHDG5wU9ta-OPSwmOVVE6KMbwCFeQCKiEa5oaopx5YU/exec",
+      PRODUCTS_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSjtq2BYhjYDHTgydaNishs2Pp4RcnZ-MRP0Rlx45qnWJc6O7STabnedajFMFzF-2ef7znJOPVyHUFt/pub?gid=0&single=true&output=csv",
+      BARCODES_CSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSjtq2BYhjYDHTgydaNishs2Pp4RcnZ-MRP0Rlx45qnWJc6O7STabnedajFMFzF-2ef7znJOPVyHUFt/pub?gid=1272373832&single=true&output=csv"
+    };
+  </script>
+  <script src="./app.js"></script>
+</body>
+</html>
