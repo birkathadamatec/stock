@@ -221,11 +221,16 @@ function parseCsv(text) {
 
 // ---------- API ----------
 async function apiPost(payload) {
+  const form = new URLSearchParams();
+  Object.entries(payload).forEach(([k, v]) => {
+    form.set(k, (v === undefined || v === null) ? '' : String(v));
+  });
+
   const res = await fetch(window.CONFIG.API_URL, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
+    body: form, // <-- בלי headers!
   });
+
   const data = await res.json();
   if (!data.ok) throw new Error(data.error || 'API error');
   return data;
